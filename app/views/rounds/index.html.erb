@@ -1,0 +1,7 @@
+<h1>hi</h1>
+
+<ul>
+  <% @rounds.each do |id, restaurant| %>
+    <li><%= restaurant[:name] %> (<%= restaurant[:address] %>)</li>
+  <% end %>
+</ul>
