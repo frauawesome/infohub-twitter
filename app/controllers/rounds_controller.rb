@@ -1,10 +1,9 @@
 class RoundsController < ApplicationController
-  ROUNDS = {
-    1 => { name: "Dishoom", address: "Shoreditch, London", category: "indian" },
-    2 => { name: "Sushi Samba", address: "City, London", category: "japanese" }
-  }
-
   def index
-    @rounds = ROUNDS
+    @rounds = Round.all
+  end
+
+  def show
+    @round = Round.find(params[:id])
   end
 end
