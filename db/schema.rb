@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_232407) do
+ActiveRecord::Schema.define(version: 2019_11_17_192142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "kpis", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_input"
+    t.bigint "round_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["round_id"], name: "index_kpis_on_round_id"
+  end
 
   create_table "rounds", force: :cascade do |t|
     t.integer "name"
@@ -21,4 +30,5 @@ ActiveRecord::Schema.define(version: 2019_11_02_232407) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "kpis", "rounds"
 end
