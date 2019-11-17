@@ -1,5 +1,7 @@
 
 
 Sunday November 10
-- Working to fix problem: @rounds does not work on show page
+- working to fix problem: @rounds does not work on show page
+- tried researching before_action (suggestion from Steven) but that doesn't seem to apply
+- tried adding attributes to the model but that also did not help
 
